@@ -230,7 +230,6 @@ module Faraday
 
   def self.const_missing(name)
     if name.to_sym == :Builder
-      warn "Faraday::Builder is now Faraday::RackBuilder."
       const_set name, RackBuilder
     else
       super
